@@ -1,46 +1,44 @@
 #include "phonebook.hpp"
 
 Contact::Contact(){}
-
 Contact::~Contact(){}
 
+std::string 	Contact::GetFirstName() const {return (Contact::_FirstName);}
 
-inline std::string 	Contact::GetFirstName() const {return (Contact::FirstName);}
+std::string 	Contact::GetLastName() const {return (Contact::_LastName);}
 
-inline std::string 	Contact::GetLastName() const {return (Contact::LastName);}
+std::string 	Contact::GetNickName() const {return (Contact::_NickName);}
 
-inline std::string 	Contact::GetNickName() const {return (Contact::NickName);}
+std::string 	Contact::GetDarkestSecret() const {return (Contact::_DarkestSecret);}
 
-inline std::string 	Contact::GetDarkestSecret() const {return (Contact::DarkestSecret);}
+std::string 	Contact::GetPhoneNumber() const {return (Contact::_PhoneNumber);}
 
-inline unsigned long 	Contact::GetPhoneNumber() const {return (Contact::PhoneNumber);}
-
-inline void	Contact::SetFirstName(std::string FirstName)
+void	Contact::SetFirstName(std::string FirstName)
 {
 	if (FirstName.empty() == false)
-		this->FirstName = FirstName;
+		this->_FirstName = FirstName;
 }
 
-inline void	Contact::SetLastName(std::string LastName)
+void	Contact::SetLastName(std::string LastName)
 {
 	if (LastName.empty() == false)
-		this->LastName = LastName;
+		this->_LastName = LastName;
 }
 
-inline void	Contact::SetNickName(std::string NickName)
+void	Contact::SetNickName(std::string NickName)
 {
 	if (NickName.empty() == false)
-		this->NickName = NickName;
+		this->_NickName = NickName;
 }
 
-inline void	Contact::SetDarkestSecret(std::string DarkestSecret)
+void	Contact::SetDarkestSecret(std::string DarkestSecret)
 {
 	if (DarkestSecret.empty() == false)
-		this->DarkestSecret = DarkestSecret;
+		this->_DarkestSecret = DarkestSecret;
 }
 
-inline void	Contact::SetPhoneNumber(unsigned long PhoneNumber)
+void	Contact::SetPhoneNumber(std::string PhoneNumber)
 {
-	if (PhoneNumber <= ULONG_MAX)
-		this->PhoneNumber = PhoneNumber;
+	if (PhoneNumber.empty() == false)
+		this->_PhoneNumber = PhoneNumber;
 }

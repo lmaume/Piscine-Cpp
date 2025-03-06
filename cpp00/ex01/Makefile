@@ -6,13 +6,15 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2025/03/04 16:25:26 by lmaume           ###   ########.fr        #
+#    Updated: 2025/03/06 13:46:11 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS =	phonebook.cpp
+SRCS =	phonebook.cpp				\
+		ContactSetterGetter.cpp		\
+		PhoneBookSetterGetter.cpp	\
 
 CXX = c++
 

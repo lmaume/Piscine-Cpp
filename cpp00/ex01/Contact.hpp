@@ -8,22 +8,25 @@
 class Contact
 {
 	private:
-		std::string		FirstName;	
-		std::string		LastName;
-		std::string		NickName;
-		std::string		DarkestSecret;
-		unsigned long	PhoneNumber;
+		std::string		_FirstName;	
+		std::string		_LastName;
+		std::string		_NickName;
+		std::string		_DarkestSecret;
+		std::string	_PhoneNumber;
 	public:
 		std::string		GetFirstName() const;
-		std::string		GetLastName() const {return (this->LastName);}
-		std::string		GetNickName() const {return (this->NickName);}
-		std::string		GetDarkestSecret() const {return (this->DarkestSecret);}
-		unsigned long	GetPhoneNumber() const {return (this->PhoneNumber);}
+		std::string		GetLastName() const;
+		std::string		GetNickName() const;
+		std::string		GetDarkestSecret() const;
+		std::string	GetPhoneNumber() const;
+
 		void			SetFirstName(std::string FirstName);
 		void			SetLastName(std::string LastName);
 		void			SetNickName(std::string NickName);
 		void			SetDarkestSecret(std::string DarkestSecret);
-		void			SetPhoneNumber(unsigned long PhoneNumber);
-};
+		void			SetPhoneNumber(std::string PhoneNumber);
+		Contact(void);
+		~Contact(void);
+	};
 
 #endif
