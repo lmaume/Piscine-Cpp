@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
 #include <limits.h>
 
 class Contact
@@ -12,13 +13,13 @@ class Contact
 		std::string		_LastName;
 		std::string		_NickName;
 		std::string		_DarkestSecret;
-		std::string	_PhoneNumber;
+		std::string		_PhoneNumber;
 	public:
 		std::string		GetFirstName() const;
 		std::string		GetLastName() const;
 		std::string		GetNickName() const;
 		std::string		GetDarkestSecret() const;
-		std::string	GetPhoneNumber() const;
+		std::string		GetPhoneNumber() const;
 
 		void			SetFirstName(std::string FirstName);
 		void			SetLastName(std::string LastName);
