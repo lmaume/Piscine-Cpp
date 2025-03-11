@@ -17,6 +17,7 @@ class PhoneBook
 		void	SetContactNickName(int id, std::string Name);
 		void	SetContactDarkestSecret(int id, std::string Name);
 		void	SetContactPhoneNumber(int id, std::string PhoneNumber);
+		void	ClearContact(int id);
 		PhoneBook(void);
 		~PhoneBook(void);
 };

@@ -1,39 +1,5 @@
 #include "phonebook.hpp"
 
-// int	AddContact(std::string	TerminalEntry, PhoneBook *_PhoneBook, int i)
-// {
-// 	if (TerminalEntry == "ADD")
-// 	{
-// 		//First Name//
-// 		std::cout << "Contact's First Name." << std::endl;
-// 		std::cin >> TerminalEntry;
-// 		if (TerminalEntry != "\n")
-// 			_PhoneBook->SetContactFirstName(i, TerminalEntry);
-// 		//Last Name//
-// 		std::cout << "Contact's Last Name." << std::endl;
-// 		std::cin >> TerminalEntry;
-// 		if (TerminalEntry != "\n")
-// 			_PhoneBook->SetContactLastName(i, TerminalEntry);
-// 		//Nickname//
-// 		std::cout << "Contact's Nickname." << std::endl;
-// 		std::cin >> TerminalEntry;
-// 		if (TerminalEntry != "\n")
-// 			_PhoneBook->SetContactNickName(i, TerminalEntry);
-// 		//Phone Number//
-// 		std::cout << "Contact's Phone Number." << std::endl;
-// 		std::cin >> TerminalEntry;
-// 		if (TerminalEntry != "\n")
-// 			_PhoneBook->SetContactPhoneNumber(i, TerminalEntry);
-// 		//Darkest Secret//
-// 		std::cout << "Contact's Darkest Secret." << std::endl;
-// 		std::cin >> TerminalEntry;
-// 		if (TerminalEntry != "\n")
-// 			_PhoneBook->SetContactDarkestSecret(i, TerminalEntry);
-// 		i++;
-// 	}
-// 	return (i);
-// }
-
 int	AddContact(std::string	TerminalEntry, PhoneBook *_PhoneBook, int i)
 {
 	if (TerminalEntry == "ADD")
@@ -41,30 +7,41 @@ int	AddContact(std::string	TerminalEntry, PhoneBook *_PhoneBook, int i)
 		//First Name//
 		std::cout << "Contact's First Name." << std::endl;
 		std::getline(std::cin, TerminalEntry);
-		if (TerminalEntry != "\n")
+		if (TerminalEntry.empty() == false)
+		{
 			_PhoneBook->SetContactFirstName(i, TerminalEntry);
-		//Last Name//
-		std::cout << "Contact's Last Name." << std::endl;
-		std::getline(std::cin, TerminalEntry);
-		if (TerminalEntry != "\n")
-			_PhoneBook->SetContactLastName(i, TerminalEntry);
-		//Nickname//
-		std::cout << "Contact's Nickname." << std::endl;
-		std::getline(std::cin, TerminalEntry);
-		if (TerminalEntry != "\n")
-			_PhoneBook->SetContactNickName(i, TerminalEntry);
-		//Phone Number//
-		std::cout << "Contact's Phone Number." << std::endl;
-		std::getline(std::cin, TerminalEntry);
-		if (TerminalEntry != "\n")
-			_PhoneBook->SetContactPhoneNumber(i, TerminalEntry);
-		//Darkest Secret//
-		std::cout << "Contact's Darkest Secret." << std::endl;
-		std::getline(std::cin, TerminalEntry);
-		if (TerminalEntry != "\n")
-			_PhoneBook->SetContactDarkestSecret(i, TerminalEntry);
-		i++;
+			//Last Name//
+			std::cout << "Contact's Last Name." << std::endl;
+			std::getline(std::cin, TerminalEntry);
+			if (TerminalEntry.empty() == false)
+			{
+				_PhoneBook->SetContactLastName(i, TerminalEntry);
+				//Nickname//
+				std::cout << "Contact's Nickname." << std::endl;
+				std::getline(std::cin, TerminalEntry);
+				if (TerminalEntry.empty() == false)
+				{
+					_PhoneBook->SetContactNickName(i, TerminalEntry);
+					//Phone Number//
+					std::cout << "Contact's Phone Number." << std::endl;
+					std::getline(std::cin, TerminalEntry);
+					if (TerminalEntry.empty() == false)
+					{
+						_PhoneBook->SetContactPhoneNumber(i, TerminalEntry);
+						//Darkest Secret//
+						std::cout << "Contact's Darkest Secret." << std::endl;
+						std::getline(std::cin, TerminalEntry);
+						if (TerminalEntry.empty() == false)
+						{
+							_PhoneBook->SetContactDarkestSecret(i, TerminalEntry);
+							return (i + 1);
+						}	
+					}
+				}
+			}
+		}
 	}
+	_PhoneBook->ClearContact(i);
 	return (i);
 }
 

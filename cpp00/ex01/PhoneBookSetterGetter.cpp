@@ -34,3 +34,8 @@ void PhoneBook::SetContactPhoneNumber(int id, std::string PhoneNumber)
 {
 	this->_ContactTab[id].SetPhoneNumber(PhoneNumber);
 }
+
+void PhoneBook::ClearContact(int id)
+{
+	this->_ContactTab[id].ClearContact();
+}

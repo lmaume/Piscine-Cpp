@@ -42,3 +42,12 @@ void	Contact::SetPhoneNumber(std::string PhoneNumber)
 	if (PhoneNumber.empty() == false)
 		this->_PhoneNumber = PhoneNumber;
 }
+
+void	Contact::ClearContact()
+{
+	this->_FirstName.clear();
+	this->_LastName.clear();
+	this->_NickName.clear();
+	this->_PhoneNumber.clear();
+	this->_DarkestSecret.clear();
+}
