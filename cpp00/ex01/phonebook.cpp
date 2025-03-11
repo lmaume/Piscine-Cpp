@@ -35,12 +35,7 @@ int	AddContact(std::string	TerminalEntry, PhoneBook *_PhoneBook, int i)
 						{
 							_PhoneBook->SetContactDarkestSecret(i, TerminalEntry);
 							return (i + 1);
-						}	
-					}
-				}
-			}
-		}
-	}
+	}}}}}}
 	_PhoneBook->ClearContact(i);
 	return (i);
 }
@@ -57,26 +52,17 @@ void	PrintContactList(PhoneBook *_PhoneBook)
 		std::cout << "|         " << j + 1 << "|";
 		//First Name//
 		if (_PhoneBook->GetContact(j).GetFirstName().size() <= 10)
-		{
-			std::cout << std::setw(10);
-			std::cout << _PhoneBook->GetContact(j).GetFirstName() << "|";
-		}
+			std::cout << std::setw(10) << _PhoneBook->GetContact(j).GetFirstName() << "|";
 		else
 			std::cout << _PhoneBook->GetContact(j).GetFirstName().substr(0, 9) << ".|";
 		//Last Name//
 		if (_PhoneBook->GetContact(j).GetLastName().size() <= 10)
-		{
-			std::cout << std::setw(10);
-			std::cout << _PhoneBook->GetContact(j).GetLastName() << "|";
-		}
+			std::cout << std::setw(10) << _PhoneBook->GetContact(j).GetLastName() << "|";
 		else
 			std::cout << _PhoneBook->GetContact(j).GetLastName().substr(0, 9) << ".|";
 		//Nickname//
 		if (_PhoneBook->GetContact(j).GetNickName().size() <= 10)
-		{
-			std::cout << std::setw(10);
-			std::cout << _PhoneBook->GetContact(j).GetNickName() << "|";
-		}
+			std::cout << std::setw(10) << _PhoneBook->GetContact(j).GetNickName() << "|";
 		else
 			std::cout << _PhoneBook->GetContact(j).GetNickName().substr(0, 9) << ".|";
 		std::cout << "\n";
@@ -131,7 +117,7 @@ int main(void)
 		i = AddContact(TerminalEntry, &_PhoneBook, i);
 		SearchContact(TerminalEntry, &_PhoneBook);
 		if (TerminalEntry == "EXIT")
-			return (0);
+			return (std::cout << "Quitting PhoneBook.\n", 0);
 		j++;
 	}
 	return (1);
